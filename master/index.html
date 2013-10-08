@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="hm_cms">
+    <meta name="author" content="florian schmitt/martin van wickeren">
+    <title>masterarbeit</title>
+
+    <!--latest jquery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!--less framework-->
+    <link rel="stylesheet/less" type="text/css" href="css/style.less" />
+
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+     <!--[if lte IE 8]>
+         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+     <![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script type="text/javascript" src="js/L.Map.Sync.js"></script>
+
+
+    <script src="js/less-1.4.1.min.js" type="text/javascript"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </head>
+
+
+  <body>
+
+    <div id="main-application-wrapper" class="sc-view">
+
+      <div id="main-application-wrapper-top" class="sc-view">
+          <div id="main-application-top-navigation" class="sc-view navbar_class1 col_100">
+            <div id="main-application-top-navigation-user" class="sc-view navbar_class1 col_40"></div>
+            <div id="main-application-top-nav-path-wrapper" class="sc-view navbar_class1">
+                <div id="main-application-top-nav-path-icon" class="sc-view navbar_class1"></div>
+                <div id="main-application-top-nav-path" class="sc-view navbar_class1">Analysetitel</div>
+            </div>
+            <div id="main-application-top-navigation-menu" class="sc-view navbar_class1">
+                <div class="top-nav-item">
+                  <div class="top-nav-item-circle sc-view"></div>
+                  <div class="top-nav-item-label sc-view">Erkenntnis</div>
+                </div>
+                <div class="top-nav-item">
+                  <div class="top-nav-item-circle sc-view"></div>
+                  <div class="top-nav-item-label sc-view">Snapshot</div>
+                </div>
+                <div id="top-nav-3" class="top-nav-item">
+                  <div class="top-nav-item-circle sc-view"></div>
+                  <div class="top-nav-item-label sc-view">Übersicht</div>
+                </div>
+                <div class="top-nav-item">
+                  <div class="top-nav-item-circle sc-view"></div>
+                  <div class="top-nav-item-label sc-view">Benachrichtigung</div>
+                </div>
+                <div class="top-nav-item">
+                  <div class="top-nav-item-circle sc-view"></div>
+                  <div class="top-nav-item-label sc-view">Chat</div>
+                </div>
+            </div>
+          </div>
+      </div>
+
+      <div id="main-application-wrapper-bottom" class="sc-view">
+          <div id="main-application-wrapper-bottom-left" class="sc-view col_10 mawbl_small">
+            <div id="left-navigation-wrapper" class="sc-view">
+              <div id="left-navigation-header" class="sc-view navbar_class3 col_70"></div>
+              <div id="left-navigation-list" class="sc-view">
+                <div class="left-nav-item col_90">1</div>
+                <div class="left-nav-item">2</div>
+                <div class="left-nav-item">3</div>
+                <div class="left-nav-item">4</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="main-application-wrapper-bottom-right" class="sc-view mawbr_small">
+              <div id="analysisWrapper" class="sc-view analysisWrapper_b">
+                  <div id="analysis_overview" class='sc-view main-app-title-bar'>
+                    <div class='sc-view main-app-title'>Analyseübersicht</div>
+                  </div>
+                  <div class='segmented-menu sc-view'>
+                    <div class='segmented-menu-list sc-view'>
+                      <div class="segmented-menu-item segmented-menu-item-selected">
+                          <div class="segmented-menu-item-label">Allgemein</div>
+                      </div>
+                      <div class="segmented-menu-item">
+                          <div class="segmented-menu-item-label">Analysedashboard</div>
+                      </div>
+                      <div class="segmented-menu-item">
+                          <div class="segmented-menu-item-label">Persöhnliches</div>
+                      </div>
+                      <div class="segmented-menu-item">
+                          <div class="segmented-menu-item-label">Datengrundlage</div>
+                      </div>
+                      <div class="segmented-menu-item">
+                          <div class="segmented-menu-item-label">Verlauf</div>
+                      </div>
+                    </div>
+                    <div class='segmented-menu-seperator sc-view'></div>
+                  </div>
+              </div><!--/analysisWrapper-->
+
+              <div id="mapWrapper" class="sc-view mapSmall">
+
+                <div id="map" class="sc-view"></div>
+
+                <div id="mapFooter" class="sc-view">
+                  <div id="mapFooterMenu" class="sc-view">
+                      <div class="footerMenu-item">1</div>
+                      <div class="footerMenu-item">2</div>
+                      <div class="footerMenu-item">3</div>
+                      <div id="footerMenu1" value='open' class="footerMenu-item">4</div>
+                  </div>
+                  <div id="mapLegend" class="sc-view">
+                    <div id="mapLegendTitel" class="sc-view">Legende</div>
+                  </div>
+                </div> 
+
+                <div id="mapDashboard" class="sc-view">
+                  <div id="mapDashboardPanel-right" class="sc-view shadow">
+                 
+                  
+                      <div id="ratioPanel1" element-type="ratioPanelBig" class="ratioWrapperTest ratioPanelBig">
+                        <div class="ratioWrapperHead rWHB sc-view">
+                              <div class="ratioWrapperHead_left sc-view leftPanel">
+                                  <div class="sc-view ratioPanelWrapper">
+                                        <div id="analysisTitel" class="sc-view">Prognose und mögliches Potential</div>
+                                        <div id="ratioSummary" class="sc-view">43.566 Fälle</div>
+                                        <div id="ratioFactorSum" class="sc-view">295 Krankenhäuser</div>
+                                        <div class="margin-holder"><div class="ratioPercentage sc-view">100 %</div></div>
+                                  </div>
+                              </div>
+                              <div class="ratioWrapperHead_right sc-view rightPanel">
+                                  <div class="ratioPanel-right-MenuWrapper sc-view">
+                                    <div class="ratioPanelMenu-item ratioPanelToggle" value='open' height="75" parent="ratioPanel1">1</div>
+                                    <div class="ratioPanelMenu-item">2</div>
+                                  </div>
+                              </div>
+                        </div>
+                        <div class="ratioWrapperBottom rWBB sc-view">
+                              <div class="ratioWrapperBottom_left sc-view leftPanel">
+                                    <div class="ratioDetailWrapper sc-view">
+                                      <div class="ratioDetailWrapper-item"></div>
+                                      <div class="ratioDetailWrapper-item"></div>
+                                      <div class="ratioDetailWrapper-item"></div>
+                                    </div>
+                              </div>
+                              <div class="ratioWrapperBottom_right sc-view rightPanel"></div>
+                            </div>
+                      </div>
+
+                      <div id="ratioPanel2" element-type="ratioPanelSmall" class="ratioWrapperTest ratioPanelSmall">
+                        <div class="ratioWrapperHead rWHS sc-view">
+                              <div class="ratioWrapperHead_left sc-view leftPanel">
+                                      <div class="ratioPanel-left-head-indicator sc-view">J44.0</div>
+                                      <div class="ratioSummary_item sc-view">12.462 Fälle</div>
+                              </div>
+                              <div class="ratioWrapperHead_right sc-view rightPanel">
+                                  <div class="ratioPanel-right-MenuWrapper sc-view">
+                                    <div class="ratioPanelMenu-item ratioPanelToggle" value='open' height="45" parent="ratioPanel2">1</div>
+                                    <div class="ratioPanelMenu-item">2</div>
+                                  </div>
+                              </div>
+                        </div>
+                        <div class="ratioWrapperBottom rWBS sc-view">
+                              <div class="ratioWrapperBottom_left sc-view leftPanel">
+                                    <div class="ratioDetailWrapper sc-view">
+                                        <div class="ratioDetailWrapper-item"></div>
+                                        <div class="ratioDetailWrapper-item"></div>
+                                        <div class="ratioDetailWrapper-item"></div>
+                                    </div>
+                              </div>
+                              <div class="ratioWrapperBottom_right sc-view rightPanel"></div>
+                        </div>
+                      </div>
+
+                  </div>
+
+                  <div id="mapDashboardPanel-left" class="sc-view">
+                    <div id="mapClone" class="sc-view"></div>
+                    <div class="dark_blur sc-view">
+                      <div id="mapDashboardPanel-left-Content" class="sc-view">
+                        blblb vlvlvlv
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          
+
+      </div>
+
+    </div>
+
+    <!--core js-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/application/init.js" type="text/javascript"></script>
+
+  </body>
+</html>
